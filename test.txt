@@ -1,3 +1,5 @@
+FILE ADA DI FOLDER notebooks/tugas-Kafka-2Consumer
+
 1. Saat kamu menjalankan Kafka mulai dari producer mengirim data hingga consumer memproses data, pada bagian mana kamu baru benar-benar memahami bagaimana alur data real-time bekerja?
 
 Saya mulai benar-benar memahami alur data real-time saat producer dijalankan secara terus-menerus dan saya melihat consumer langsung menerima serta memproses data tanpa harus menunggu data terkumpul terlebih dahulu. Ketika producer mengirim event setiap beberapa detik dan consumer langsung menampilkan hasil pemrosesan di terminal, saya menyadari bahwa data mengalir secara real-time dari producer ke Kafka lalu ke consumer. Selain itu, perubahan offset yang terus bertambah di Kafka UI juga membantu saya memahami bahwa data diproses secara streaming, bukan batch.
