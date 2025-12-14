@@ -1,1 +1,7 @@
-mantap mantap
+1. Saat kamu menjalankan Kafka mulai dari producer mengirim data hingga consumer memproses data, pada bagian mana kamu baru benar-benar memahami bagaimana alur data real-time bekerja?
+
+Saya mulai benar-benar memahami alur data real-time saat producer dijalankan secara terus-menerus dan saya melihat consumer langsung menerima serta memproses data tanpa harus menunggu data terkumpul terlebih dahulu. Ketika producer mengirim event setiap beberapa detik dan consumer langsung menampilkan hasil pemrosesan di terminal, saya menyadari bahwa data mengalir secara real-time dari producer ke Kafka lalu ke consumer. Selain itu, perubahan offset yang terus bertambah di Kafka UI juga membantu saya memahami bahwa data diproses secara streaming, bukan batch.
+
+2. Setelah kamu mencoba menjalankan lebih dari satu consumer dalam satu consumer group, apa yang kamu pahami tentang cara sistem membagi pekerjaan saat data yang diproses semakin banyak?
+
+Setelah menjalankan dua consumer dalam satu consumer group, saya memahami bahwa Kafka membagi pekerjaan berdasarkan partition, bukan berdasarkan jumlah consumer. Setiap partition hanya diproses oleh satu consumer dalam satu group, sehingga tidak terjadi duplikasi data. Ketika jumlah data meningkat, Kafka secara otomatis mendistribusikan partition ke consumer yang tersedia. Hal ini membuat pemrosesan data menjadi lebih efisien dan scalable, namun juga bergantung pada jumlah partition yang dimiliki oleh topic.
